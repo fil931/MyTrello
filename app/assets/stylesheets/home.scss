@@ -1,33 +1,176 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.home {
-  .profile {
-    .avatar, .name {
+
+//Navigation
+$myTrelloColor: #42B573;
+
+nav {
+  .navbar-brand {
+    span, .myTrelloImg {
       display: inline-block;
       vertical-align: middle;
     }
 
-    .name {
-      margin-left: 10px;
+    .myTrelloImg {
+      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+    }
 
-      .dev {
+    span {
+      color: $myTrelloColor;
+    }
+  }
+}
+
+//Home
+.home {
+  //Description (top_left)
+  .description {
+    header {
+      text-align: center;
+
+      span, .myTrelloImg {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .myTrelloImg {
+        margin-right: 10px;
+        width: 70px;
+        height: 70px;
+      }
+
+      span {
+        color: $myTrelloColor;
+        text-transform: uppercase;
+        font-size: 40px;
+      }
+
+      p.subtitle {
+        color: $myTrelloColor;
         font-style: italic;
       }
     }
 
-    .avatar {
-      width: 100px;
-      height: 100px;
-      background-color: lightgrey;
-      border-radius: 50%;
+    article {
+      border-top: solid 2px $myTrelloColor;
+      padding-top: 10px;
+      margin-top: 5px;
+    }
+  }
+
+  //Aside Profile (top-right)
+  .profile {
+    border-left: solid 1px lightgrey;
+
+    header {
+      margin-bottom: 10px;
+
+      .avatar, .name {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .name {
+        margin-left: 10px;
+        padding-top: 10px;
+
+        p {
+          font-size: 20px;
+
+          span.dev {
+            font-style: italic;
+            font-size: 10px;
+          }
+        }
+      }
+
+      .avatar {
+        width: 70px;
+        height: 70px;
+        background-color: lightgrey;;
+        border-radius: 50%;
+      }
+
+      .avatarImg {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 10px auto;
+      }
     }
 
-    .avatarImg {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin: 10px auto;
+    article {
+      .about {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .favTechnos {
+        margin-bottom: 20px;
+
+        span {
+            display: block;
+            text-align: center;
+        }
+
+        a {
+          display: inline-block;
+          vertical-align: middle;
+          width: 60px;
+          height: 70px;
+
+          .techImg {
+            width: 60px;
+            height: 60px;
+          }
+
+          &:hover {
+              border-bottom: solid 2px lightgrey;
+          }
+        }
+      }
+
+      .socialNetworks {
+      text-align: center;
+       span, a {
+         display: inline-block;
+         vertical-align: middle;
+       }
+
+       span {
+         margin-right: 10px;
+       }
+
+        a {
+          i {
+            font-size: 30px;
+            color: lightgrey;
+            margin: 0 3px;
+          }
+
+          &:hover {
+            i {
+              &.fa-facebook-square {
+                color: #3B5998;
+              }
+              &.fa-twitter-square {
+                color: #3AAAE1;
+              }
+              &.fa-linkedin-square {
+                color: #0177B5;
+              }
+              &.fa-github {
+                color: #323131;
+              }
+              &.fa-pinterest-square {
+                color: #BD081C;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -1,13 +1,16 @@
 <%= render "shared/menu" %>
 
 <div class="home row">
-  <article class="col-lg-6 description">
+  <section class="col-lg-9 description">
     <header>
-        <h1>My Trello</h1>
-        <p>Outil de management de projets</p>
+        <p>
+          <%= image_tag "project-management.png", :class => "myTrelloImg img-responsive" %>
+          <span>My Trello</span>
+        </p>
+        <p class="subtitle">Outil de management de projets</p>
     </header>
 
-    <body>
+    <article class="col-lg-offset-3 col-lg-6">
         <p>
           My Trello est un outil permettant de manager ses projets.</br>
           Il est constitué :
@@ -17,10 +20,10 @@
           <li>De <b>colonnes</b> représentant un état du projet (Finie, En cours, A faire etc...)</li>
           <li>De <b>tickets</b> presentant des tâches à accomplir</li>
         </ul>
-    </body>
-  </article>
+    </article>
+  </section>
 
-  <article class="col-lg-6 profile">
+  <aside class="col-lg-3 profile">
     <header>
       <div class="avatar">
         <%= image_tag "batman.png", :class => "avatarImg img-responsive" %>
@@ -34,21 +37,28 @@
       </div>
     </header>
 
-    <body>
-      <p>
-
+    <article>
+      <p class="about">
+        I'm a passionated web developper !<br/>
+        I created this website with Ruby On Rails !<br/>
       </p>
-    </body>
-  </article>
+
+      <p class="favTechnos">
+        <span>My fav' technos : </span>
+
+        <a href="https://symfony.com" target="_blank" title="Symfony"><%= image_tag "symfony.png", :class => "techImg img-responsive" %></a>
+        <a href="https://rubyonrails.org" target="_blank" title="Ruby On Rails"><%= image_tag "ror.jpg", :class => "techImg img-responsive" %></a>
+        <a href="https://angularjs.org" target="_blank" title="Angular JS"><%= image_tag "angularjs.png", :class => "techImg img-responsive" %></a>
+        <a href="https://www.meteor.com" target="_blank" title="Meteor"><%= image_tag "meteor.jpg", :class => "techImg img-responsive" %></a>
+      </p>
+
+      <p class="socialNetworks">
+        <a href="#"><i class="fa fa-facebook-square"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+        <a href="#"><i class="fa fa-twitter-square"></i></a>
+        <a href="#"><i class="fa fa-linkedin-square"></i></a>
+        <a href="#"><i class="fa fa-pinterest-square"></i></a>
+      </p>
+    </article>
+  </aside>
 </div>
-
-
-<h1>HomePage</h1>
-
-<!-- TODO : a little one-page description of what is MyTrello -->
-<h2>
-  <%= link_to 'Aller sur la page de mes boards', boards_path %>
-</h2>
-<!-- ENDPAGE -->
-
-<i class="fa fa-star"></i>LOURD LE FONT AWESOME :D<i class="fa fa-star"></i>
