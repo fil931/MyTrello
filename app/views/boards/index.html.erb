@@ -1,13 +1,13 @@
-<p id="notice"><%= notice %></p>
-
 <%= render "shared/menu" %>
 
+<p id="notice"><%= notice %></p>
+
 <div class="boardsIndex">
-  <p class="title">My Boards :D</p>
+  <p class="title">My Boards</p>
 
   <div class="boards row">
     <% @boards.each do |board| %>
-      <a href="/boards/<%= board.id %>" class="col-lg-4">
+      <a href="/boards/<%= board.id %>" class="col-lg-4 col-md-4 col-sm-6">
         <section class="board">
           <header>
             <%= image_tag "#{board.image}", :class => "boardImg img-responsive" %>
@@ -22,7 +22,7 @@
       </a>
     <% end %>
 
-    <a class="col-lg-4">
+    <a class="col-lg-4 col-md-4 col-sm-6">
       <section class="board">
         <header>
           <i class="fa fa-plus"></i>
@@ -35,30 +35,3 @@
     </a>
   </div>
 </div>
-
-
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @boards.each do |board| %>
-      <tr>
-        <td><%= board.title %></td>
-        <td><%= board.description %></td>
-        <td><%= link_to 'Show', board %></td>
-        <td><%= link_to 'Edit', edit_board_path(board) %></td>
-        <td><%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
-
-<br>
-
-<%= link_to 'New Board', new_board_path %>

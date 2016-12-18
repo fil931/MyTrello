@@ -83,10 +83,116 @@ $myTrelloColor: #42B573;
           color: white;
 
           &.title {
+            font-size: 18px;
             text-transform: uppercase;
             margin-bottom: 5px;
-            padding-bottom: 20px;
+            padding-bottom: 10px;
             border-bottom: solid 1px white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.boardPage {
+  .return {
+    a {
+      color: lightgrey;
+      font-size: 16px;
+
+      i {
+        margin-right: 3px;
+      }
+
+      &:hover {
+        color: $myTrelloColor;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .title {
+    text-align: center;
+
+    .boardImg, p {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .boardImg {
+      width: 70px;
+      height: 70px;
+    }
+
+    p {
+      color: $myTrelloColor;
+      font-size: 20px;
+      margin-left: 10px;
+    }
+  }
+
+  .description {
+    margin-top: 10px;
+
+    p {
+      text-align: center;
+      font-style: italic;
+
+      .editBtn, .deleteBtn {
+        margin-left: 10px;
+        color: lightgrey;
+
+        i {
+          font-size: 18px;
+        }
+
+        &:hover {
+          color: $myTrelloColor;
+        }
+      }
+    }
+  }
+
+  .columns {
+    margin-top: 30px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    .column {
+      display: inline-block;
+      vertical-align: top;
+
+      height: 500px;
+      width: 250px;
+      background-color: $myTrelloColor;
+      margin-right: 5px;
+
+      header {
+        padding: 10px 0;
+        border-bottom: solid 3px lightgrey;
+
+        .title {
+          color: lightgrey;
+          text-align: center;
+        }
+
+        .actions {
+          text-align: right;
+
+          a {
+            text-align: right;
+            color: lightgrey;
+            margin-left: 3px;
+
+            i {
+              font-size: 14px;
+            }
+
+            &:hover {
+              color: lighten($myTrelloColor, 30%);
+            }
           }
         }
       }

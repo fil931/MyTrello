@@ -1,24 +1,52 @@
+<%= render "shared/menu" %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @board.title %>
-</p>
+<div class="boardPage">
+  <div class="return">
+    <a href="/boards">
+      <i class="fa fa-arrow-left"></i>
+      Back to boards
+    </a>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @board.description %>
-</p>
+  <div class="title">
+    <%= image_tag "#{@board.image}", :class => "boardImg img-responsive" %>
+    <p><%= @board.title %></p>
+  </div>
 
-<p>
-  <strong>Image:</strong>
-  <%= @board.image %>
-</p>
+  <div class="description">
+    <p>
+      <i class="fa fa-arrow-circle-right"></i>
+      <%= @board.description %>
+      <%= link_to "<i class='fa fa-pencil'></i>".html_safe, edit_board_path(@board), :class => "editBtn" %>
+      <%= link_to "<i class='fa fa-trash'></i>".html_safe, @board, method: :delete, data: { confirm: 'Are you sure?' }, :class => "deleteBtn" %>
+    </p>
+  </div>
 
-<%= link_to 'Edit', edit_board_path(@board) %> |
-<%= link_to 'Back', boards_path %>
+  <div class="columns">
+    <% @columns.each do |column| %>
+      <div class="column">
+        <header class="col-lg-12 col-md-12 col-sm-12">
+          <p class="col-lg-8 col-md-8 col-sm-8 title">
+            <%= column.title %>
+          </p>
 
-<p>Columns of this board</p>
+          <p class="col-lg-4 col-md-4 col-sm-4 actions">
+            <%= link_to "<i class='fa fa-pencil'></i>".html_safe, edit_column_path(column), :class => "editBtn" %>
+            <%= link_to "<i class='fa fa-trash'></i>".html_safe, column, method: :delete, data: { confirm: 'Are you sure?' }, :class => "deleteBtn" %>
+          </p>
+        </header>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+<!-- <p>Columns of this board</p>
 <table>
   <thead>
     <tr>
@@ -37,4 +65,4 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
