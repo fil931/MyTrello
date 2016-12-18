@@ -2,9 +2,42 @@
 
 <%= render "shared/menu" %>
 
-<h1>Listing Boards</h1>
+<div class="boardsIndex">
+  <p class="title">My Boards</p>
 
-<table>
+  <div class="boards row">
+    <% @boards.each do |board| %>
+      <a href="/boards/<%= board.id %>" class="col-lg-4">
+        <section class="board">
+          <header>
+            <%= image_tag "#{board.image}", :class => "boardImg img-responsive" %>
+            <p><%= board.title %></p>
+          </header>
+
+          <article>
+            <p class="title"><%= board.title %></p>
+            <p><%= board.description %></p>
+          </article>
+        </section>
+      </a>
+    <% end %>
+
+    <a class="col-lg-4">
+      <section class="board">
+        <header>
+          <i class="fa fa-plus"></i>
+        </header>
+
+        <article>
+          <p><i class="fa fa-plus"></i></p>
+        </article>
+      </section>
+    </a>
+  </div>
+</div>
+
+
+<!-- <table>
   <thead>
     <tr>
       <th>Title</th>
@@ -24,7 +57,7 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
 <br>
 
