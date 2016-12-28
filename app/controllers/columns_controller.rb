@@ -22,6 +22,26 @@ class ColumnsController < ApplicationController
   def edit
   end
 
+  def add_ticket
+    @ticket = Ticket.new
+    @ticket.title = params[:title]
+    @ticket.description = params[:description]
+    @ticket.column_id = params[:column_id]
+
+    @column = Column.find(params[:column_id])
+    @board = Board.find(@column.board_id)
+
+    respond_to do |format|
+      if @ticket.save
+        format.html { redirect_to @board, notice: 'New ticket was successfully created.' }
+        format.json { render :show, status: :created, location: @board }
+      else
+        format.html {redirect_to @board, notice: 'Error: ticket not created' }
+        format.json { render json: @ticket.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # POST /columns
   # POST /columns.json
   def create

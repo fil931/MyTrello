@@ -48,32 +48,30 @@
             <%= link_to "<i class='fa fa-trash'></i>".html_safe, column, method: :delete, data: { confirm: 'Are you sure?' }, :class => "deleteBtn" %>
           </p>
         </header>
+
+        <section class="col-lg-12 col-md-12 col-sm-12">
+          <div class="addTicket">
+            <button class="btn btn-default addTicketBtn">Ajouter un ticket</button>
+
+            <%= form_tag("/ticket/add", method: "post", class: "addTicketForm") do %>
+              <div class="form-group">
+                <%= text_field_tag(:title, '', class:"form-control titleInput", placeholder:"Titre du ticket") %>
+              </div>
+              <div class="form-group">
+                <%= text_area_tag(:description, '', class:"form-control descriptionInput", placeholder:"Description du ticket") %>
+              </div>
+              <%= hidden_field_tag(:column_id, column.id) %>
+              <%= submit_tag("Créer", class:"btn btn-default submitInput") %>
+            <% end %>
+          </div>
+
+          <div class="tickets">
+            <!-- TODO: Join column and ticket tables to display tickets of each column -->
+            <!-- <% tickets.each do |ticket| %>
+              
+            <% end %> -->
+        </section>
       </div>
     <% end %>
   </div>
 </div>
-
-
-
-
-
-<!-- <p>Columns of this board</p>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @columns.each do |column| %>
-      <tr>
-        <td><%= column.title %></td>
-        <td><%= link_to 'Show', column %></td>
-        <td><%= link_to 'Edit', edit_column_path(column) %></td>
-        <td><%= link_to 'Destroy', column, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
