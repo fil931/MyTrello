@@ -22,6 +22,24 @@ class BoardsController < ApplicationController
   def edit
   end
 
+  def add_column
+    @column = Column.new
+    @column.title = params[:title]
+    @column.board_id = params[:board_id]
+
+    @board = Board.find(params[:board_id])
+
+    respond_to do |format|
+      if @column.save
+        format.html { redirect_to @board, notice: 'New column for this board was successfully created.' }
+        format.json { render :show, status: :created, location: @board }
+      else
+        format.html {redirect_to @board, notice: 'Error: column not created' }
+        format.json { render json: @column.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # POST /boards
   # POST /boards.json
   def create

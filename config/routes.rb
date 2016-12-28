@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :tickets
   resources :columns
-  get 'home' => 'home#index'
+  get '/' => 'home#index'
   resources :boards
+  post '/column/add' => 'boards#add_column'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

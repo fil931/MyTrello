@@ -8,7 +8,6 @@ $myTrelloColor: #42B573;
 
   p.title {
     font-size: 30px;
-    text-transform: uppercase;
     color: $myTrelloColor;
     text-align: center;
   }
@@ -146,10 +145,14 @@ $myTrelloColor: #42B573;
         i {
           font-size: 18px;
         }
+      }
 
-        &:hover {
-          color: $myTrelloColor;
-        }
+      .editBtn:hover {
+        color: orange;
+      }
+
+      .deleteBtn:hover {
+        color: red;
       }
     }
   }
@@ -189,11 +192,43 @@ $myTrelloColor: #42B573;
             i {
               font-size: 14px;
             }
-
-            &:hover {
-              color: lighten($myTrelloColor, 30%);
-            }
           }
+
+          .editBtn:hover {
+            color: orange;
+          }
+
+          .deleteBtn:hover {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+
+  .addColumn {
+    margin-top: 30px;
+
+    .addColumnForm {
+      text-align: center;
+
+      label {
+        margin-right: 5px;
+        color: $myTrelloColor;
+      }
+
+      input.titleInput {
+        border-color: $myTrelloColor;
+        border-width: 1px;
+      }
+
+      input.submitInput {
+        background-color: $myTrelloColor;
+        color: white;
+
+        &:hover {
+          background-color: lighten($myTrelloColor, 10%);
+          border-color: lighten($myTrelloColor, 10%);
         }
       }
     }

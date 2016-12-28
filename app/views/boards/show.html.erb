@@ -24,6 +24,17 @@
     </p>
   </div>
 
+  <div class="addColumn">
+    <%= form_tag("/column/add", method: "post", class: "form-inline addColumnForm") do %>
+      <div class="form-group">
+        <%= label_tag(:title, "Nom de la colonne:") %>
+        <%= text_field_tag(:title, '', class:"form-control titleInput") %>
+      </div>
+      <%= hidden_field_tag(:board_id, @board.id) %>
+      <%= submit_tag("Ajouter", class:"btn btn-default submitInput") %>
+    <% end %>
+  </div>
+
   <div class="columns">
     <% @columns.each do |column| %>
       <div class="column">
